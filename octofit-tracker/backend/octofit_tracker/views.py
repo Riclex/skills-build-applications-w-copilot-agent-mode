@@ -6,12 +6,13 @@ from .models import User, Team, Activity, Leaderboard, Workout
 
 @api_view(['GET'])
 def api_root(request, format=None):
+    base_url = request.get_host()
     return Response({
-        'users': 'api/users/',
-        'teams': 'api/teams/',
-        'activities': 'api/activities/',
-        'leaderboard': 'api/leaderboard/',
-        'workouts': 'api/workouts/',
+        'users': f'https://vigilant-capybara-6v7qprqpvgjf4jqw-8000.app.github.dev/api/users/',
+        'teams': f'https://vigilant-capybara-6v7qprqpvgjf4jqw-8000.app.github.dev/api/teams/',
+        'activities': f'https://vigilant-capybara-6v7qprqpvgjf4jqw-8000.app.github.dev/api/activities/',
+        'leaderboard': f'https://vigilant-capybara-6v7qprqpvgjf4jqw-8000.app.github.dev/api/leaderboard/',
+        'workouts': f'https://vigilant-capybara-6v7qprqpvgjf4jqw-8000.app.github.dev/api/workouts/',
     })
 
 class UserViewSet(viewsets.ModelViewSet):
